@@ -173,47 +173,67 @@
   <!-- ========== LE CLUB ========== -->
   <section id="club" class="relative bg-dark py-24 lg:py-32">
     <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-    <div class="mx-auto max-w-6xl px-6 lg:px-8">
-      <div class="grid items-center gap-16 lg:grid-cols-2">
-        <!-- Left -->
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <!-- Top: Text + main image -->
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <div class="reveal-left">
           <div class="section-label">
             <span class="h-1.5 w-1.5 rounded-full bg-teal"></span>
             Depuis 2010
           </div>
           <h2 class="section-title !text-left">LE CLUB</h2>
-          <p class="mb-6 text-lg leading-relaxed text-white/45">
+          <p class="mb-5 text-lg leading-relaxed text-white/50">
             Fondé en 2010 sous le nom <span class="text-teal font-semibold">AS Lacanau Section Volley Ball</span>, notre club est dédié à la pratique du volley-ball en salle et sur sable pour les adultes.
           </p>
-          <p class="mb-8 text-lg leading-relaxed text-white/45">
+          <p class="mb-8 text-lg leading-relaxed text-white/50">
             Que vous soyez joueur expérimenté ou débutant, nous vous accueillons dans un environnement amical, mixte et sans pression compétitive excessive.
           </p>
-          <div class="flex items-center gap-3 rounded-xl border border-orange/20 bg-orange/5 px-5 py-4">
+          <div class="flex items-center gap-3 rounded-xl border border-orange/20 bg-orange/5 px-5 py-4 mb-8">
             <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-orange/10 text-orange flex-shrink-0">
               <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             </div>
             <p class="text-base font-bold text-orange">Chez nous, le volley est avant tout un loisir partagé !</p>
           </div>
+          <a href="#contact" class="btn-primary">
+            Essayer gratuitement
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
         </div>
 
-        <!-- Right - Stats -->
-        <div class="reveal-right grid grid-cols-2 gap-4">
-          <div class="glass-card glow-teal text-center">
-            <p class="font-display text-5xl text-teal">2010</p>
-            <p class="mt-2 text-sm font-medium text-white/30">Création</p>
+        <div class="reveal-right relative">
+          <div class="relative overflow-hidden rounded-2xl">
+            <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&h=600&fit=crop&q=80" alt="Match de volley-ball en salle" class="w-full h-[400px] lg:h-[500px] object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent"></div>
           </div>
-          <div class="glass-card glow-orange text-center">
-            <p class="font-display text-5xl text-orange">2</p>
-            <p class="mt-2 text-sm font-medium text-white/30">Entraînements / sem.</p>
+          <!-- Small floating image -->
+          <div class="absolute -bottom-6 -left-6 w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-4 border-dark shadow-2xl hidden md:block">
+            <img src="https://images.unsplash.com/photo-1553005746-9245ba190489?w=400&h=400&fit=crop&q=80" alt="Beach volley au coucher du soleil" class="w-full h-full object-cover" loading="lazy">
           </div>
-          <div class="glass-card glow-orange text-center">
-            <p class="font-display text-5xl text-orange">1000<span class="text-3xl">+</span></p>
-            <p class="mt-2 text-sm font-medium text-white/30">Abonnés Facebook</p>
-          </div>
-          <div class="glass-card glow-teal text-center">
-            <p class="font-display text-5xl text-teal">MIXTE</p>
-            <p class="mt-2 text-sm font-medium text-white/30">Ouvert à tous</p>
-          </div>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="reveal mt-20 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 p-6 text-center group hover:border-teal/15 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-b from-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <p class="relative font-display text-5xl text-teal">2010</p>
+          <p class="relative mt-2 text-sm font-medium text-white/30">Année de création</p>
+        </div>
+        <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 p-6 text-center group hover:border-orange/15 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <p class="relative font-display text-5xl text-orange">2</p>
+          <p class="relative mt-2 text-sm font-medium text-white/30">Entraînements / sem.</p>
+        </div>
+        <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 p-6 text-center group hover:border-teal/15 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-b from-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <p class="relative font-display text-5xl text-teal">1000<span class="text-3xl">+</span></p>
+          <p class="relative mt-2 text-sm font-medium text-white/30">Abonnés Facebook</p>
+        </div>
+        <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 p-6 text-center group hover:border-orange/15 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <p class="relative font-display text-5xl text-orange">MIXTE</p>
+          <p class="relative mt-2 text-sm font-medium text-white/30">Ouvert à tous</p>
         </div>
       </div>
     </div>
@@ -222,90 +242,81 @@
   <!-- ========== HORAIRES ET LIEUX ========== -->
   <section id="horaires" class="relative bg-dark-100 py-24 lg:py-32">
     <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-    <div class="absolute top-20 right-0 h-[500px] w-[500px] rounded-full bg-teal/[0.02] blur-[150px]"></div>
-    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="text-center reveal">
         <div class="section-label">
           <span class="h-1.5 w-1.5 rounded-full bg-teal"></span>
           Chaque semaine
         </div>
         <h2 class="section-title">HORAIRES &amp; LIEUX</h2>
-        <p class="section-desc">Retrouvez-nous en salle et sur le sable, beau temps comme mauvais temps.</p>
+        <p class="section-desc">Deux rendez-vous par semaine, en salle ou pieds dans le sable.</p>
       </div>
 
-      <div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
-        <!-- Indoor -->
-        <div class="reveal-left group relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 transition-all duration-500 hover:border-teal/20">
-          <div class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-teal to-teal-light opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-          <div class="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-teal/[0.03] transition-all duration-700 group-hover:scale-[2.5] group-hover:bg-teal/[0.05]"></div>
-          <div class="relative p-8 lg:p-10">
-            <div class="mb-6 flex items-center gap-4">
-              <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-teal/10 text-teal transition-all duration-300 group-hover:bg-teal group-hover:text-white group-hover:shadow-lg group-hover:shadow-teal/20">
-                <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-xs font-bold uppercase tracking-widest text-teal">Indoor</h3>
-                <p class="text-2xl font-extrabold text-white">En salle</p>
-              </div>
+      <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+        <!-- Indoor Card -->
+        <div class="reveal-left group relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 transition-all duration-500 hover:border-teal/20 hover:-translate-y-1">
+          <div class="relative h-56 sm:h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1592656094267-764a45160876?w=800&h=500&fit=crop&q=80" alt="Volleyball en salle - match indoor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-200 via-dark-200/40 to-transparent"></div>
+            <div class="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-teal/90 backdrop-blur px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
+              <span class="h-1.5 w-1.5 rounded-full bg-white animate-pulse"></span>
+              Indoor
             </div>
+          </div>
+          <div class="relative p-7 lg:p-8">
+            <h3 class="mb-5 text-2xl font-extrabold text-white">Volley en salle</h3>
             <div class="space-y-4">
-              <div class="flex items-start gap-4 rounded-xl bg-white/[0.02] p-4">
-                <div class="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-orange/10">
-                  <svg class="h-4 w-4 text-orange" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div class="flex items-center gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
                 <div>
                   <p class="font-bold text-white">Tous les jeudis soirs</p>
-                  <p class="text-sm text-white/35">20h30 à 23h</p>
+                  <p class="text-sm text-white/40">20h30 &mdash; 23h</p>
                 </div>
               </div>
-              <div class="flex items-start gap-4 rounded-xl bg-white/[0.02] p-4">
-                <div class="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-orange/10">
-                  <svg class="h-4 w-4 text-orange" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <div class="flex items-center gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
                 <div>
                   <p class="font-bold text-white">Salle Cosec</p>
-                  <p class="text-sm text-white/35">Lacanau-Ville</p>
+                  <p class="text-sm text-white/40">Lacanau-Ville</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Beach -->
-        <div class="reveal-right group relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 transition-all duration-500 hover:border-orange/20">
-          <div class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-orange to-orange-light opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-          <div class="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-orange/[0.03] transition-all duration-700 group-hover:scale-[2.5] group-hover:bg-orange/[0.05]"></div>
-          <div class="relative p-8 lg:p-10">
-            <div class="mb-6 flex items-center gap-4">
-              <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-orange/10 text-orange transition-all duration-300 group-hover:bg-orange group-hover:text-white group-hover:shadow-lg group-hover:shadow-orange/20">
-                <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-xs font-bold uppercase tracking-widest text-orange">Beach Volley</h3>
-                <p class="text-2xl font-extrabold text-white">Sur le sable</p>
-              </div>
+        <!-- Beach Card -->
+        <div class="reveal-right group relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 transition-all duration-500 hover:border-orange/20 hover:-translate-y-1">
+          <div class="relative h-56 sm:h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1562552052-c77b0b02ae0e?w=800&h=500&fit=crop&q=80" alt="Beach volley sur la plage au soleil" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-200 via-dark-200/40 to-transparent"></div>
+            <div class="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-orange/90 backdrop-blur px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
+              <span class="h-1.5 w-1.5 rounded-full bg-white animate-pulse"></span>
+              Beach
             </div>
+          </div>
+          <div class="relative p-7 lg:p-8">
+            <h3 class="mb-5 text-2xl font-extrabold text-white">Beach volley</h3>
             <div class="space-y-4">
-              <div class="flex items-start gap-4 rounded-xl bg-white/[0.02] p-4">
-                <div class="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-orange/10">
-                  <svg class="h-4 w-4 text-orange" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div class="flex items-center gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-orange/10 text-orange">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
                 <div>
                   <p class="font-bold text-white">Tous les samedis matins</p>
-                  <p class="text-sm text-white/35">10h à 12h30</p>
+                  <p class="text-sm text-white/40">10h &mdash; 12h30</p>
                 </div>
               </div>
-              <div class="flex items-start gap-4 rounded-xl bg-white/[0.02] p-4">
-                <div class="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-orange/10">
-                  <svg class="h-4 w-4 text-orange" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <div class="flex items-center gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-orange/10 text-orange">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
                 <div>
                   <p class="font-bold text-white">Moutchic / Ardilouse</p>
-                  <p class="text-sm text-white/35">Lacanau</p>
+                  <p class="text-sm text-white/40">Lacanau</p>
                 </div>
               </div>
             </div>
@@ -318,48 +329,74 @@
   <!-- ========== ÉVÉNEMENTS ========== -->
   <section id="evenements" class="relative bg-dark py-24 lg:py-32">
     <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-    <div class="absolute bottom-20 left-0 h-[400px] w-[400px] rounded-full bg-orange/[0.02] blur-[150px]"></div>
-    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="text-center reveal">
         <div class="section-label">
           <span class="h-1.5 w-1.5 rounded-full bg-teal"></span>
           Tournois &amp; Championnats
         </div>
         <h2 class="section-title">ÉVÉNEMENTS</h2>
-        <p class="section-desc">Nos équipes participent régulièrement au championnat loisir <strong class="text-teal">Volley'Lib</strong>.</p>
+        <p class="section-desc">Nos équipes participent au championnat loisir <strong class="text-teal">Volley'Lib</strong> et organisent des tournois tout au long de l'année.</p>
       </div>
 
-      <div class="mx-auto grid max-w-5xl gap-6 lg:grid-cols-3">
-        <!-- Volley'Lib -->
-        <div class="reveal glass-card group hover:glow-teal hover:border-teal/15 hover:-translate-y-1">
-          <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-teal/10 text-teal transition-all duration-300 group-hover:bg-teal group-hover:text-white group-hover:shadow-lg group-hover:shadow-teal/20">
-            <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      <!-- Volley'Lib - Full width banner -->
+      <div class="reveal mb-8 group relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200">
+        <div class="grid md:grid-cols-2">
+          <div class="relative h-64 md:h-auto overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=800&h=500&fit=crop&q=80" alt="Equipe de volleyball qui se congratule" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-dark-200 hidden md:block"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-200 to-transparent md:hidden"></div>
           </div>
-          <h3 class="mb-2 text-xl font-extrabold text-white">Volley'Lib</h3>
-          <p class="mb-3 text-xs font-bold uppercase tracking-widest text-teal/60">Championnat loisir</p>
-          <p class="text-white/35 leading-relaxed">Nos équipes s'affrontent dans le championnat loisir organisé par la fédération.</p>
+          <div class="relative p-8 lg:p-12 flex flex-col justify-center">
+            <div class="inline-flex self-start items-center gap-2 rounded-full border border-teal/20 bg-teal/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-teal mb-5">
+              Championnat officiel
+            </div>
+            <h3 class="mb-3 text-3xl font-extrabold text-white">Volley'Lib</h3>
+            <p class="mb-6 text-white/45 leading-relaxed">
+              Nos équipes s'affrontent dans le championnat loisir organisé par la fédération. Des matchs passionnants, une ambiance conviviale et le plaisir du sport avant tout.
+            </p>
+            <a href="#contact" class="btn-teal self-start">
+              Rejoindre une équipe
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+          </div>
         </div>
+      </div>
 
+      <!-- Tournois cards -->
+      <div class="grid gap-6 md:grid-cols-2">
         <!-- Tournois d'été -->
-        <div class="reveal glass-card group hover:glow-orange hover:border-orange/15 hover:-translate-y-1" style="transition-delay: 0.1s">
-          <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-orange/10 text-orange transition-all duration-300 group-hover:bg-orange group-hover:text-white group-hover:shadow-lg group-hover:shadow-orange/20">
-            <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        <div class="reveal-left group relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 transition-all duration-500 hover:border-orange/15 hover:-translate-y-1">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=800&h=400&fit=crop&q=80" alt="Coucher de soleil estival sur la plage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-200 via-dark/30 to-transparent"></div>
+            <span class="absolute bottom-4 left-6 inline-block rounded-full bg-orange px-4 py-1.5 text-xs font-bold uppercase text-white shadow-lg">Juin &rarr; août</span>
           </div>
-          <h3 class="mb-2 text-xl font-extrabold text-white">Tournois d'été</h3>
-          <p class="mb-3 text-xs font-bold uppercase tracking-widest text-orange/60">Juin &rarr; fin août</p>
-          <p class="mb-4 text-white/35 leading-relaxed">Tous les <strong class="text-white/60">jeudis soirs</strong> en collaboration avec <strong class="text-teal">Cap 33</strong>.</p>
-          <span class="inline-block rounded-full border border-orange/20 bg-orange/5 px-4 py-1.5 text-sm font-bold text-orange">2&euro; / joueur</span>
+          <div class="p-7">
+            <h3 class="mb-2 text-xl font-extrabold text-white">Tournois d'été</h3>
+            <p class="mb-4 text-white/40 leading-relaxed">Tous les <strong class="text-white/65">jeudis soirs</strong> en collaboration avec <strong class="text-teal">Cap 33</strong>. Ambiance garantie sous le soleil de Lacanau.</p>
+            <div class="flex items-center justify-between">
+              <span class="inline-block rounded-full border border-orange/20 bg-orange/5 px-4 py-1.5 text-sm font-bold text-orange">2&euro; / joueur</span>
+              <span class="text-xs text-white/25 font-medium">Ouvert à tous</span>
+            </div>
+          </div>
         </div>
 
         <!-- Tournois Beach -->
-        <div class="reveal glass-card group hover:glow-teal hover:border-teal/15 hover:-translate-y-1" style="transition-delay: 0.2s">
-          <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-teal/10 text-teal transition-all duration-300 group-hover:bg-teal group-hover:text-white group-hover:shadow-lg group-hover:shadow-teal/20">
-            <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <div class="reveal-right group relative overflow-hidden rounded-2xl border border-white/5 bg-dark-200 transition-all duration-500 hover:border-teal/15 hover:-translate-y-1">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=400&fit=crop&q=80" alt="Filet de beach volley sur le sable" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-200 via-dark/30 to-transparent"></div>
+            <span class="absolute bottom-4 left-6 inline-block rounded-full bg-teal px-4 py-1.5 text-xs font-bold uppercase text-white shadow-lg">Toute l'année</span>
           </div>
-          <h3 class="mb-2 text-xl font-extrabold text-white">Tournois Beach</h3>
-          <p class="mb-3 text-xs font-bold uppercase tracking-widest text-teal/60">Toute l'année</p>
-          <p class="mb-4 text-white/35 leading-relaxed">Chaque <strong class="text-white/60">1<sup>er</sup> samedi du mois</strong>, affrontez-vous sur le sable.</p>
-          <span class="inline-block rounded-full border border-teal/20 bg-teal/5 px-4 py-1.5 text-sm font-bold text-teal">2&euro; / joueur</span>
+          <div class="p-7">
+            <h3 class="mb-2 text-xl font-extrabold text-white">Tournois Beach</h3>
+            <p class="mb-4 text-white/40 leading-relaxed">Chaque <strong class="text-white/65">1<sup>er</sup> samedi du mois</strong>, retrouvez-vous sur le sable pour des matchs entre amis et entre clubs.</p>
+            <div class="flex items-center justify-between">
+              <span class="inline-block rounded-full border border-teal/20 bg-teal/5 px-4 py-1.5 text-sm font-bold text-teal">2&euro; / joueur</span>
+              <span class="text-xs text-white/25 font-medium">Ouvert à tous</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
