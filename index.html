@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lacanau Volley Club</title>
+  <meta name="description" content="Lacanau Volley Club - Vivez la passion du volley-ball entre océan et forêt. Indoor & Beach en Gironde !">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ocean: '#29A2B8',
+            'ocean-dark': '#1E8A9E',
+            soleil: '#F39237',
+            'soleil-dark': '#E07D1F',
+            marine: '#152B3C',
+            sable: '#FDF8F5',
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply font-sans text-marine antialiased;
+      }
+    }
+    @layer components {
+      .nav-link {
+        @apply relative text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-soleil;
+      }
+      .nav-link::after {
+        content: '';
+        @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-soleil transition-all duration-300;
+      }
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        @apply w-full;
+      }
+      .nav-link.active {
+        @apply text-soleil;
+      }
+      .btn-primary {
+        @apply inline-block rounded-full bg-soleil px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg transition-all duration-300 hover:bg-soleil-dark hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0;
+      }
+      .btn-outline {
+        @apply inline-block rounded-full border-2 border-white px-8 py-3 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-marine;
+      }
+      .section-title {
+        @apply mb-4 text-3xl font-extrabold tracking-tight text-marine sm:text-4xl;
+      }
+      .section-subtitle {
+        @apply mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-marine/70;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" class="fixed top-0 left-0 z-50 w-full transition-all duration-500">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <!-- Logo -->
+      <a href="#accueil" class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-soleil text-white font-extrabold text-lg shadow">
+          LV
+        </div>
+        <span class="text-lg font-bold text-white transition-colors duration-300" id="brand-text">Lacanau Volley</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden items-center gap-8 lg:flex" id="desktop-nav">
+        <li><a href="#accueil" class="nav-link text-white/90">Accueil</a></li>
+        <li><a href="#club" class="nav-link text-white/90">Le Club</a></li>
+        <li><a href="#horaires" class="nav-link text-white/90">Horaires</a></li>
+        <li><a href="#evenements" class="nav-link text-white/90">Événements</a></li>
+        <li><a href="#partenaires" class="nav-link text-white/90">Partenaires</a></li>
+        <li><a href="#contact" class="btn-primary !py-2.5 !px-6 !text-xs">Contact</a></li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle" class="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden" aria-label="Menu">
+        <span class="hamburger-line block h-0.5 w-6 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line block h-0.5 w-6 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line block h-0.5 w-6 bg-white transition-all duration-300"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 flex translate-x-full flex-col items-center justify-center gap-8 bg-marine/95 backdrop-blur-md transition-transform duration-500 lg:hidden">
+      <a href="#accueil" class="mobile-link text-2xl font-bold text-white hover:text-soleil transition-colors">Accueil</a>
+      <a href="#club" class="mobile-link text-2xl font-bold text-white hover:text-soleil transition-colors">Le Club</a>
+      <a href="#horaires" class="mobile-link text-2xl font-bold text-white hover:text-soleil transition-colors">Horaires</a>
+      <a href="#evenements" class="mobile-link text-2xl font-bold text-white hover:text-soleil transition-colors">Événements</a>
+      <a href="#partenaires" class="mobile-link text-2xl font-bold text-white hover:text-soleil transition-colors">Partenaires</a>
+      <a href="#contact" class="btn-primary mt-4 text-xl">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="accueil" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-marine via-ocean-dark to-ocean">
+    <!-- Decorative shapes -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-soleil/10 blur-3xl"></div>
+      <div class="absolute -bottom-32 -left-32 h-[500px] w-[500px] rounded-full bg-ocean/20 blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-2xl"></div>
+      <!-- Volleyball SVG watermark -->
+      <svg class="absolute right-10 bottom-10 h-64 w-64 text-white/5 lg:h-96 lg:w-96" viewBox="0 0 100 100" fill="currentColor">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M50 2 C50 2, 30 30, 50 50 C70 70, 50 98, 50 98" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M2 50 C2 50, 30 30, 50 50 C70 70, 98 50, 98 50" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M15 15 C15 15, 40 35, 50 50 C60 65, 85 85, 85 85" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+      <p class="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-5 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/80 backdrop-blur-sm">
+        Indoor &amp; Beach Volley en Gironde
+      </p>
+      <h1 class="mb-6 text-5xl font-black leading-tight text-white sm:text-6xl lg:text-7xl">
+        Lacanau<br>
+        <span class="text-soleil">Volley Club</span>
+      </h1>
+      <p class="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl">
+        Vivez la passion du volley-ball entre océan et forêt.<br class="hidden sm:block"> Indoor &amp; Beach en Gironde&nbsp;!
+      </p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="#contact" class="btn-primary text-base">Rejoignez-nous (1<sup>er</sup> essai gratuit)</a>
+        <a href="#club" class="btn-outline">Découvrir le club</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="h-8 w-8 text-white/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== LE CLUB ========== -->
+  <section id="club" class="bg-white py-20 lg:py-28">
+    <div class="mx-auto max-w-4xl px-6 text-center lg:px-8">
+      <div class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-ocean/10 text-ocean">
+        <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+      </div>
+      <h2 class="section-title">Le Club</h2>
+      <div class="mx-auto max-w-3xl">
+        <p class="text-lg leading-relaxed text-marine/70">
+          Fondé en 2010 <span class="text-ocean font-semibold">(AS Lacanau Section Volley Ball)</span>, notre club est dédié à la pratique du volley-ball en salle et sur sable pour les adultes. Que vous soyez joueur expérimenté ou débutant, nous vous accueillons dans un environnement amical, mixte et sans pression compétitive excessive.
+        </p>
+        <p class="mt-6 text-xl font-bold text-ocean">
+          Chez nous, le volley est avant tout un loisir partagé&nbsp;!
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div class="rounded-2xl bg-sable p-6">
+          <p class="text-3xl font-black text-ocean">2010</p>
+          <p class="mt-1 text-sm font-medium text-marine/60">Année de création</p>
+        </div>
+        <div class="rounded-2xl bg-sable p-6">
+          <p class="text-3xl font-black text-ocean">2</p>
+          <p class="mt-1 text-sm font-medium text-marine/60">Entraînements / sem.</p>
+        </div>
+        <div class="rounded-2xl bg-sable p-6">
+          <p class="text-3xl font-black text-ocean">1000+</p>
+          <p class="mt-1 text-sm font-medium text-marine/60">Abonnés Facebook</p>
+        </div>
+        <div class="rounded-2xl bg-sable p-6">
+          <p class="text-3xl font-black text-ocean">Mixte</p>
+          <p class="mt-1 text-sm font-medium text-marine/60">Ouvert à tous</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HORAIRES ET LIEUX ========== -->
+  <section id="horaires" class="bg-sable py-20 lg:py-28">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="section-title">Horaires &amp; Lieux</h2>
+        <p class="section-subtitle">Retrouvez-nous chaque semaine en salle et sur le sable.</p>
+      </div>
+
+      <div class="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
+        <!-- Card Indoor -->
+        <div class="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+          <div class="absolute top-0 left-0 h-1.5 w-full bg-gradient-to-r from-ocean to-ocean-dark"></div>
+          <div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-ocean/10 text-ocean transition-colors group-hover:bg-ocean group-hover:text-white">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="mb-1 text-sm font-bold uppercase tracking-wider text-ocean">Indoor</h3>
+          <p class="mb-4 text-2xl font-extrabold text-marine">En salle</p>
+          <div class="space-y-3 text-marine/70">
+            <div class="flex items-start gap-3">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-soleil" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <p>Tous les <strong class="text-marine">jeudis soirs</strong><br>de <strong class="text-marine">20h30 à 23h</strong></p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-soleil" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <p>Salle <strong class="text-marine">Cosec</strong><br>Lacanau-Ville</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Beach -->
+        <div class="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+          <div class="absolute top-0 left-0 h-1.5 w-full bg-gradient-to-r from-soleil to-yellow-400"></div>
+          <div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-soleil/10 text-soleil transition-colors group-hover:bg-soleil group-hover:text-white">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <h3 class="mb-1 text-sm font-bold uppercase tracking-wider text-soleil">Beach Volley</h3>
+          <p class="mb-4 text-2xl font-extrabold text-marine">Sur le sable</p>
+          <div class="space-y-3 text-marine/70">
+            <div class="flex items-start gap-3">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-soleil" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <p>Tous les <strong class="text-marine">samedis matins</strong><br>de <strong class="text-marine">10h à 12h30</strong></p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-soleil" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <p><strong class="text-marine">Moutchic / Ardilouse</strong><br>Lacanau</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ÉVÉNEMENTS & COMPÉTITION ========== -->
+  <section id="evenements" class="bg-white py-20 lg:py-28">
+    <div class="mx-auto max-w-5xl px-6 lg:px-8">
+      <div class="text-center">
+        <div class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-soleil/10 text-soleil">
+          <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+          </svg>
+        </div>
+        <h2 class="section-title">Événements &amp; Compétition</h2>
+        <p class="section-subtitle">
+          Nos équipes participent régulièrement au championnat loisir <strong class="text-ocean">Volley'Lib</strong>.
+        </p>
+      </div>
+
+      <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+        <!-- Tournois d'été -->
+        <div class="group rounded-2xl border border-marine/10 bg-sable p-8 transition-all duration-300 hover:border-soleil/30 hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-soleil text-white shadow-md">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-extrabold text-marine">Tournois d'été</h3>
+              <p class="text-sm text-marine/60">Juin à fin août</p>
+            </div>
+          </div>
+          <p class="mb-3 text-marine/70">Tous les <strong class="text-marine">jeudis soirs</strong> en collaboration avec <strong class="text-ocean">Cap 33</strong>.</p>
+          <span class="inline-block rounded-full bg-soleil/10 px-4 py-1.5 text-sm font-bold text-soleil">2€ / joueur</span>
+        </div>
+
+        <!-- Tournois Beach -->
+        <div class="group rounded-2xl border border-marine/10 bg-sable p-8 transition-all duration-300 hover:border-ocean/30 hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-ocean text-white shadow-md">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-extrabold text-marine">Tournois Beach</h3>
+              <p class="text-sm text-marine/60">Toute l'année</p>
+            </div>
+          </div>
+          <p class="mb-3 text-marine/70">Chaque <strong class="text-marine">1<sup>er</sup> samedi du mois</strong>, venez vous affronter sur le sable.</p>
+          <span class="inline-block rounded-full bg-ocean/10 px-4 py-1.5 text-sm font-bold text-ocean">2€ / joueur</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PARTENAIRES ========== -->
+  <section id="partenaires" class="bg-sable py-20 lg:py-28">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="section-title">Nos Partenaires</h2>
+        <p class="section-subtitle">
+          Le club doit son succès à ses sponsors. Vous êtes une entreprise locale&nbsp;? Soutenez le sport à Lacanau et gagnez en visibilité auprès de notre communauté <strong class="text-ocean">(plus de 1000 abonnés sur Facebook)</strong>. Contactez-nous pour nos offres de sponsoring&nbsp;: maillots, tournois, bannières.
+        </p>
+      </div>
+
+      <!-- Sponsors grid -->
+      <div class="mx-auto grid max-w-4xl grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+        <div class="flex h-28 items-center justify-center rounded-2xl border-2 border-dashed border-marine/15 bg-white/60 text-sm font-semibold text-marine/30 transition-all duration-300 hover:border-ocean/40 hover:bg-white hover:text-ocean/50">
+          Votre Logo
+        </div>
+        <div class="flex h-28 items-center justify-center rounded-2xl border-2 border-dashed border-marine/15 bg-white/60 text-sm font-semibold text-marine/30 transition-all duration-300 hover:border-ocean/40 hover:bg-white hover:text-ocean/50">
+          Votre Logo
+        </div>
+        <div class="flex h-28 items-center justify-center rounded-2xl border-2 border-dashed border-marine/15 bg-white/60 text-sm font-semibold text-marine/30 transition-all duration-300 hover:border-ocean/40 hover:bg-white hover:text-ocean/50">
+          Votre Logo
+        </div>
+        <div class="flex h-28 items-center justify-center rounded-2xl border-2 border-dashed border-marine/15 bg-white/60 text-sm font-semibold text-marine/30 transition-all duration-300 hover:border-ocean/40 hover:bg-white hover:text-ocean/50">
+          Votre Logo
+        </div>
+        <div class="flex h-28 items-center justify-center rounded-2xl border-2 border-dashed border-marine/15 bg-white/60 text-sm font-semibold text-marine/30 transition-all duration-300 hover:border-ocean/40 hover:bg-white hover:text-ocean/50">
+          Votre Logo
+        </div>
+        <div class="flex h-28 items-center justify-center rounded-2xl border-2 border-dashed border-marine/15 bg-white/60 text-sm font-semibold text-marine/30 transition-all duration-300 hover:border-ocean/40 hover:bg-white hover:text-ocean/50">
+          Votre Logo
+        </div>
+        <div class="flex h-28 items-center justify-center rounded-2xl border-2 border-dashed border-marine/15 bg-white/60 text-sm font-semibold text-marine/30 transition-all duration-300 hover:border-ocean/40 hover:bg-white hover:text-ocean/50">
+          Votre Logo
+        </div>
+        <div class="flex h-28 items-center justify-center rounded-2xl border-2 border-dashed border-marine/15 bg-white/60 text-sm font-semibold text-marine/30 transition-all duration-300 hover:border-ocean/40 hover:bg-white hover:text-ocean/50">
+          Votre Logo
+        </div>
+      </div>
+
+      <p class="mt-10 text-center">
+        <a href="#contact" class="btn-primary">Devenir partenaire</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT & ESSAI ========== -->
+  <section id="contact" class="bg-white py-20 lg:py-28">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="section-title">Contact &amp; Essai</h2>
+        <p class="section-subtitle">
+          Intéressé(e)&nbsp;? Venez nous rendre visite lors d'un entraînement&nbsp;! Aucune inscription préalable n'est requise pour une première séance.
+        </p>
+      </div>
+
+      <div class="mx-auto grid max-w-5xl gap-12 lg:grid-cols-5">
+        <!-- Left - Info -->
+        <div class="space-y-8 lg:col-span-2">
+          <div>
+            <h3 class="mb-4 text-xl font-extrabold text-marine">Venez essayer&nbsp;!</h3>
+            <p class="text-marine/70 leading-relaxed">Présentez-vous directement à l'un de nos créneaux d'entraînement. Pas besoin de vous inscrire, apportez simplement votre bonne humeur et une tenue de sport&nbsp;!</p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-ocean/10 text-ocean">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <p class="text-sm text-marine/70"><strong class="text-marine">Lacanau-Ville</strong>, Gironde (33)</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-ocean/10 text-ocean">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <p class="text-sm text-marine/70">contact@lacanauvolley.fr</p>
+            </div>
+          </div>
+
+          <!-- Facebook button -->
+          <a href="https://www.facebook.com/LacanauVolleyBall" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-xl bg-[#1877F2] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#0d65d9] hover:shadow-xl hover:-translate-y-0.5">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Suivez-nous sur Facebook
+          </a>
+        </div>
+
+        <!-- Right - Form -->
+        <div class="lg:col-span-3">
+          <form id="contact-form" class="rounded-3xl bg-sable p-8 shadow-sm sm:p-10">
+            <h3 class="mb-6 text-xl font-extrabold text-marine">Envoyez-nous un message</h3>
+            <div class="space-y-5">
+              <div>
+                <label for="name" class="mb-1.5 block text-sm font-semibold text-marine">Nom</label>
+                <input type="text" id="name" name="name" required placeholder="Votre nom complet" class="w-full rounded-xl border border-marine/15 bg-white px-4 py-3 text-marine placeholder-marine/30 outline-none transition-all duration-300 focus:border-ocean focus:ring-2 focus:ring-ocean/20">
+              </div>
+              <div>
+                <label for="email" class="mb-1.5 block text-sm font-semibold text-marine">Email</label>
+                <input type="email" id="email" name="email" required placeholder="votre@email.com" class="w-full rounded-xl border border-marine/15 bg-white px-4 py-3 text-marine placeholder-marine/30 outline-none transition-all duration-300 focus:border-ocean focus:ring-2 focus:ring-ocean/20">
+              </div>
+              <div>
+                <label for="message" class="mb-1.5 block text-sm font-semibold text-marine">Message</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Votre message..." class="w-full resize-none rounded-xl border border-marine/15 bg-white px-4 py-3 text-marine placeholder-marine/30 outline-none transition-all duration-300 focus:border-ocean focus:ring-2 focus:ring-ocean/20"></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full text-center">
+                Envoyer
+              </button>
+            </div>
+            <!-- Success message -->
+            <div id="form-success" class="mt-5 hidden rounded-xl bg-green-50 p-4 text-center text-sm font-semibold text-green-700">
+              Merci pour votre message ! Nous vous répondrons rapidement.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-marine py-12">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <div class="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
+        <div>
+          <div class="flex items-center justify-center gap-3 md:justify-start">
+            <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-soleil text-white font-extrabold text-sm shadow">
+              LV
+            </div>
+            <span class="text-lg font-bold text-white">Lacanau Volley Club</span>
+          </div>
+          <p class="mt-2 text-sm text-white/50">&copy; 2026 Lacanau Volley Club. Tous droits réservés.</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://www.facebook.com/LacanauVolleyBall" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-soleil hover:text-white" aria-label="Facebook">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="mailto:contact@lacanauvolley.fr" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-soleil hover:text-white" aria-label="Email">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    (function () {
+      const navbar = document.getElementById('navbar');
+      const brandText = document.getElementById('brand-text');
+      const desktopNav = document.getElementById('desktop-nav');
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+      const navLinks = desktopNav.querySelectorAll('.nav-link');
+      const contactForm = document.getElementById('contact-form');
+      const formSuccess = document.getElementById('form-success');
+      const hamburgerLines = menuToggle.querySelectorAll('.hamburger-line');
+
+      let menuOpen = false;
+
+      /* ---------- Navbar scroll effect ---------- */
+      function handleScroll() {
+        const scrolled = window.scrollY > 60;
+        navbar.classList.toggle('bg-white', scrolled);
+        navbar.classList.toggle('shadow-lg', scrolled);
+        brandText.classList.toggle('!text-marine', scrolled);
+
+        navLinks.forEach(link => {
+          link.classList.toggle('!text-marine/80', scrolled);
+        });
+
+        hamburgerLines.forEach(line => {
+          line.classList.toggle('!bg-marine', scrolled && !menuOpen);
+        });
+
+        updateActiveLink();
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      /* ---------- Active link detection ---------- */
+      function updateActiveLink() {
+        const sections = document.querySelectorAll('section[id]');
+        let current = '';
+
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+      }
+
+      /* ---------- Mobile menu toggle ---------- */
+      function toggleMenu() {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle('translate-x-full', !menuOpen);
+        mobileMenu.classList.toggle('translate-x-0', menuOpen);
+        document.body.classList.toggle('overflow-hidden', menuOpen);
+
+        hamburgerLines[0].classList.toggle('translate-y-2', menuOpen);
+        hamburgerLines[0].classList.toggle('rotate-45', menuOpen);
+        hamburgerLines[1].classList.toggle('opacity-0', menuOpen);
+        hamburgerLines[2].classList.toggle('-translate-y-2', menuOpen);
+        hamburgerLines[2].classList.toggle('-rotate-45', menuOpen);
+
+        hamburgerLines.forEach(line => {
+          if (menuOpen) {
+            line.classList.add('!bg-white');
+          } else {
+            line.classList.remove('!bg-white');
+            handleScroll();
+          }
+        });
+      }
+
+      menuToggle.addEventListener('click', toggleMenu);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (menuOpen) toggleMenu();
+        });
+      });
+
+      mobileMenu.querySelector('.btn-primary').addEventListener('click', () => {
+        if (menuOpen) toggleMenu();
+      });
+
+      /* ---------- Contact form ---------- */
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        formSuccess.classList.remove('hidden');
+        contactForm.reset();
+        setTimeout(() => {
+          formSuccess.classList.add('hidden');
+        }, 5000);
+      });
+    })();
+  </script>
+</body>
+</html>
